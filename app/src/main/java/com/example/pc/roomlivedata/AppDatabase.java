@@ -59,6 +59,8 @@ public abstract class AppDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(Void... voids) {
 
+            userDetailDao.getAllUser();
+
             UserDetail userDetail=new UserDetail();
             userDetail.setUserName("praveen");
             userDetail.setUserEmail("praveenkumar046@gmail.com");

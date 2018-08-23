@@ -12,7 +12,7 @@ import java.util.List;
 @Dao
 public interface UserDetailDao {
 
-    @Query("SELECT * from user_detail ORDER BY user_name ASC ")
+    @Query("SELECT * from user_detail ORDER BY user_name  ASC")
     LiveData<List<UserDetail>> getAllUser();
 
     @Insert
@@ -20,4 +20,7 @@ public interface UserDetailDao {
 
     @Delete
     void delete(UserDetail userDetail);
+
+    @Query("DELETE FROM user_detail")
+    void deleteAll();
 }

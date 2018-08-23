@@ -2,6 +2,8 @@ package com.example.pc.roomlivedata;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 /**
  * Created by pc on 8/22/2018.
  */
@@ -10,6 +12,7 @@ import android.arch.persistence.room.PrimaryKey;
 public class UserDetail {
 
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     @ColumnInfo(name = "user_id")
     private int user_id;
 

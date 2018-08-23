@@ -6,9 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.List;
-
 /**
  * Created by pc on 8/22/2018.
  */
@@ -22,7 +20,6 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     public MainActivityAdapter(MainActivity mainActivity) {
 
         this.context=mainActivity;
-
     }
 
     @NonNull
@@ -35,16 +32,17 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
-        holder.text1.setText(userDetails.get(position).getUserName());
+        holder.text1.setText(userDetails.get(position).getUserName()+"   "+userDetails.get(position).getUserEmail());
     }
 
     @Override
     public int getItemCount() {
 
-        if(userDetails.size()>0)
+        if(userDetails!=null)
         {
             return userDetails.size();
         }else {
+
             return 0;
         }
     }
@@ -53,6 +51,7 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
 
         this.userDetails=userDetails;
         notifyDataSetChanged();
+
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder
@@ -61,7 +60,6 @@ public class MainActivityAdapter extends RecyclerView.Adapter<MainActivityAdapte
         public TextView text1;
         public MyViewHolder(View itemView) {
             super(itemView);
-
             text1=itemView.findViewById(R.id.text1);
         }
     }
